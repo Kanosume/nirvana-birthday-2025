@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .hover\:scale-102 {
+    transition: transform 0.3s ease;
+  }
+}
+
+@layer components {
+  .dollhouse-card {
+    @apply bg-white rounded-3xl shadow-dollhouse p-6 
+           border-2 border-nirvana-blue/20
+           backdrop-blur-sm 
+           transition-all duration-300 
+           hover:shadow-lg hover:scale-102;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(243,244,246,0.9));
+  }
+
+  .dollhouse-button {
+    @apply bg-nirvana-blue text-white 
+           font-medium py-2 px-6 
+           rounded-full border-2 border-white
+           shadow-dollhouse
+           transition-all duration-300 
+           hover:bg-nirvana-light-blue
+           hover:scale-105 
+           focus:outline-none focus:ring-2 
+           focus:ring-nirvana-blue focus:ring-opacity-50;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2 
+           rounded-xl border-2 border-nirvana-blue/20
+           focus:border-nirvana-blue focus:ring-2 
+           focus:ring-nirvana-blue focus:ring-opacity-20 
+           transition-colors duration-200;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.nirvana.silver');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.nirvana.blue');
+  border-radius: 4px;
+}
+
+/* Decorative elements */
+.dollhouse-border {
+  border-image: repeating-linear-gradient(
+    45deg,
+    theme('colors.nirvana.blue'),
+    theme('colors.nirvana.blue') 10px,
+    theme('colors.nirvana.light-blue') 10px,
+    theme('colors.nirvana.light-blue') 20px
+  ) 10;
+}
+
+/* Animations for page transitions */
+.page-transition-enter-active,
+.page-transition-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.page-transition-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}

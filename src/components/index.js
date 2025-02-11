@@ -1,0 +1,5 @@
+export { default as WishCard } from './WishCard.vue'
+export { default as SoloWishCard } from './SoloWishCard.vue'
+export { default as ImageUpload } from './ImageUpload.vue'
+export { default as SocialShare } from './SocialShare.vue'
+export { default as LoadingSpinner } from './LoadingSpinner.vue'
